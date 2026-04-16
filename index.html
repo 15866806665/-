@@ -777,7 +777,7 @@
             if (!config) return;
             const ctx = canvasContext;
             const dpr = window.devicePixelRatio || 1;
-            const displayW = 400; // 与小程序保持一致的展示宽度
+            const displayW = canvasEl.parentElement.clientWidth || 400;  // 与小程序保持一致的展示宽度
             const displayH = Math.round(config.bgSize.height * (displayW / config.bgSize.width));
 
             // 设置画布像素尺寸（考虑设备像素比）和 CSS 尺寸
