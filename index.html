@@ -296,6 +296,7 @@
             <div class="action-row">
                 <button class="btn btn-primary" id="generateBtn" style="flex:1;">生成并保存图片</button>
             </div>
+            <!-- 已移除：低分辨率提醒与上传高分背景（保持与小程序一致，无此提示） -->
         </div>
     </div>
 
@@ -313,4 +314,667 @@
         </div>
     </div>
 
-    <script>var _0xd4e5=["CiAgICAgICAgLy8g5qih5p2/6YWN572u77yI5L2/55So5pys5Zyw5Zu+54mH6Lev5b6E77yJCiAgICAg","ICAgY29uc3QgVEVNUExBVEVfQ09ORklHUyA9IHsKICAgICAgICAgICAgJ3Rhb2Jhbyc6IHsKICAgICAu","ICAgICAgICAgIGJnSW1hZ2U6ICdpbWFnZS90Yi5qcGcnLAogICAgICAgICAgICAgICAgYmdTaXplOiB7","IHdpZHRoOiAxMTc5LCBoZWlnaHQ6IDI1NTYgfSwKICAgICAgICAgICAgICAgIHJlbmRlclBhcmFtczog","eyBmb250U2l6ZTogNDIsIGxpbmVIZWlnaHQ6IDEuMiwgZm9udFdlaWdodDogJ25vcm1hbCcgfSwKICAj","ICAgICAgICAgICAgbmFtZTogJ+mt5jlrp0nLAogICAgICAgICAgICAgICAgZHJhd0Z1bmN0aW9uOiBm","dW5jdGlvbihjdHgsIGRhdGEsIHBhcmFtcykgewogICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgbmFt","ZSwgcGhvbmUsIGFkZHJlc3MgfSA9IGRhdGE7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgeyBGT05U","X1NJWkUsIExJTkVfSEVJR0hULCBzY2FsZSB9ID0gcGFyYW1zOwogICAgICAgICAgICAgICAgICAgIGNv","bnN0IGNvbnRhY3RJbmZvID0gYCR7bmFtZX3vvIwke3Bob25lfWA7CiAgICAgICAgICAgICAgICAgICAg","Y29uc3QgYWRkcmVzc0xpbmVzID0gc3BsaXRUZXh0QnlMZW5ndGgoYWRkcmVzcywgMTkpOwogICAgICAj","ICAgICAgICAgICAgY29uc3QgdG90YWxMaW5lcyA9IGFkZHJlc3NMaW5lcy5sZW5ndGggKyAxOwogICAj","ICAgICAgICAgICAgICAgICBsZXQgcmlnaHRYID0gMTA1NSAqIHNjYWxlOwogICAgICAgICAgICAgICAj","ICAgIGxldCBjb250YWN0UmlnaHRYID0gMTA1NSAqIHNjYWxlOwoKICAgICAgICAgICAgICAgICAgICBp","ZiAodG90YWxMaW5lcyA+IDMpIGNvbnRhY3RSaWdodFggPSByaWdodFggLSBGT05UX1NJWkUgKiA1OwoK","ICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFN0eWxlID0gJyMwMDAwMDAnOwogICAgICAgICAgICAj","ICAgICAgICBjdHgudGV4dEFsaWduID0gJ3JpZ2h0JzsKICAgICAgICAgICAgICAgICAgICBsZXQgY3Vycj","ZW50WSA9IDEwNTUgKiBzY2FsZTsKCiAgICAgICAgICAgICAgICAgICAgYWRkcmVzc0xpbmVzLmZvckVh","Y2gobGluZSA9PiB7CiAgICAgICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChsaW5lLCByaWdo","dFgsIGN1cnJlbnRZKTsKICAgICAgICAgICAgICAgICAgICAgICAgY3VycmVudFkgKz0gTElORV9IRUlH","SFQ7CiAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxUZXh0","KGNvbnRhY3RJbmZvLCBjb250YWN0UmlnaHRYLCBjdXJyZW50WSk7CiAgICAgICAgICAgICAgICB9CiAj","ICAgICAgICAgIH0sCiAgICAgICAgICAgICdwZGQnOiB7CiAgICAgICAgICAgICAgICBiZ0ltYWdlOiAn","aW1hZ2UvcGRkLmpwZycsCiAgICAgICAgICAgICAgICBiZ1NpemU6IHsgd2lkdGg6IDExNzksIGhlaWdo","dDogMjU1NiB9LAogICAgICAgICAgICAgICAgcmVuZGVyUGFyYW1zOiB7IGZvbnRTaXplOiA0NywgbGlu","ZUhlaWdodDogMS41LCBmb250V2VpZ2h0OiAnbm9ybWFsJyB9LAogICAgICAgICAgICAgICAgbmFtZTog","J+aLvOWkmuWkmicsCiAgICAgICAgICAgICAgICBkcmF3RnVuY3Rpb246IGZ1bmN0aW9uKGN0eCwgZGF0","YSwgcGFyYW1zKSB7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgeyBuYW1lLCBwaG9uZSwgYWRkcmVz","cyB9ID0gZGF0YTsKICAgICAgICAgICAgICAgICAgICBjb25zdCB7IExJTkVfSEVJR0hULCBzY2FsZSB9","ID0gcGFyYW1zOwogICAgICAgICAgICAgICAgICAgIGxldCBjdXJyZW50WSA9IDE4MTcgKiBzY2FsZTsK","CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxTdHlsZSA9ICcjMDAwMDAwJzsKICAgICAgICAgICAj","ICAgICAgICBjdHgudGV4dEFsaWduID0gJ2xlZnQnOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IENP","TlRBQ1RfTEVGVF9YID0gMzc0ICogc2NhbGU7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgQUREUkVT","U19MRUZUX1ggPSAxMzUgKiBzY2FsZTsKCiAgICAgICAgICAgICAgICAgICAgaWYgKG5hbWUubGVuZ3Ro","ID4gNCkgewogICAgICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFRleHQobmFtZSwgQ09OVEFDVF9M","RUZUX1gsIGN1cnJlbnRZKTsKICAgICAgICAgICAgICAgICAgICAgICAgY3VycmVudFkgKz0gTElORV9I","RUlHSFQ7CiAgICAgICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChwaG9uZSwgQUREUkVTU19M","RUZUX1gsIGN1cnJlbnRZKTsKICAgICAgICAgICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAj","ICAgICAgICAgICBjb25zdCBjb250YWN0SW5mbyA9IGAke25hbWV9ICAke3Bob25lfWA7CiAgICAgICAj","ICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChjb250YWN0SW5mbywgQ09OVEFDVF9MRUZUX1gsIGN1","cnJlbnRZKTsKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIGN1cnJlbnRZ","ICs9IExJTkVfSEVJR0hUICsgMjAgKiBzY2FsZTsKICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFN0","eWxlID0gJyM0OTQ5NDknOwogICAgICAgICAgICAgICAgICAgIGN0eC50ZXh0QWxpZ24gPSAnbGVmdCc7","CiAgICAgICAgICAgICAgICAgICAgY29uc3QgYWRkcmVzc0xpbmVzID0gc3BsaXRUZXh0QnlMZW5ndGgo","YWRkcmVzcywgMTkpOwoKICAgICAgICAgICAgICAgICAgICBhZGRyZXNzTGluZXMuZm9yRWFjaChsaW5l","ID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxUZXh0KGxpbmUsIEFERFJFU1NfTEVG","VF9YLCBjdXJyZW50WSk7CiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnJlbnRZICs9IExJTkVfSEVJ","R0hUOwogICAgICAgICAgICAgICAgICAgIH0pOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9","LAogICAgICAgICAgICAnZHknOiB7CiAgICAgICAgICAgICAgICBiZ0ltYWdlOiAnaW1hZ2UvZHkuanBn","JywKICAgICAgICAgICAgICAgIGJnU2l6ZTogeyB3aWR0aDogMTE3OSwgaGVpZ2h0OiAyNTU5IH0sCiAj","ICAgICAgICAgICAgICByZW5kZXJQYXJhbXM6IHsgZm9udFNpemU6IDQwLCBsaW5lSGVpZ2h0OiAxLjYg","fSwKICAgICAgICAgICAgICAgIG5hbWU6ICfmipbpn7MnLAogICAgICAgICAgICAgICAgZHJhd0Z1bmN0","aW9uOiBmdW5jdGlvbihjdHgsIGRhdGEsIHBhcmFtcykgewogICAgICAgICAgICAgICAgICAgIGNvbnN0","IHsgbmFtZSwgcGhvbmUsIGFkZHJlc3MgfSA9IGRhdGE7CiAgICAgICAgICAgICAgICAgICAgY29uc3Qg","eyBMSU5FX0hFSUdIVCwgc2NhbGUgfSA9IHBhcmFtczsKICAgICAgICAgICAgICAgICAgICBjdHguZmls","bFN0eWxlID0gJyMwMDAwMDAnOwogICAgICAgICAgICAgICAgICAgIGN0eC50ZXh0QWxpZ24gPSAncmln","aHQnOwogICAgICAgICAgICAgICAgICAgIGxldCB5LCBjb250YWN0TGluZXNDb3VudDsKICAgICAgICAj","ICAgICAgICAgICBjb25zdCBjb250YWN0SW5mbyA9IGAke25hbWV977yMJHtwaG9uZX1gOwoKICAgICAj","ICAgICAgICAgICAgICAgIGlmIChuYW1lLmxlbmd0aCA8PSAxMikgewogICAgICAgICAgICAgICAgICAgI","ICAgIGN0eC5maWxsVGV4dChjb250YWN0SW5mbywgMTExNSAqIHNjYWxlLCA3NTAgKiBzY2FsZSk7CiAj","ICAgICAgICAgICAgICAgICAgICAgeSA9IDgxNSAqIHNjYWxlOwogICAgICAgICAgICAgICAgICAgICAj","ICBjb250YWN0TGluZXNDb3VudCA9IDE7CiAgICAgICAgICAgICAgICAgICAgfSBlbHNlIHsKICAgICAj","ICAgICAgICAgICAgICAgICAgY3R4LmZpbGxUZXh0KG5hbWUsIDExMTUgKiBzY2FsZSwgNzUwICogc2Nh","bGUpOwogICAgICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFRleHQocGhvbmUsIDExMTUgKiBzY2Fs","ZSwgODE1ICogc2NhbGUpOwogICAgICAgICAgICAgICAgICAgICAgICB5ID0gODE1ICogc2NhbGUgKyBM","SU5FX0hFSUdIVDsKICAgICAgICAgICAgICAgICAgICAgICAgY29udGFjdExpbmVzQ291bnQgPSAyOwog","ICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgY29uc3QgYWRkcmVzc0xpbmVz","ID0gc3BsaXRUZXh0QnlMZW5ndGgoYWRkcmVzcywgMTYpOwogICAgICAgICAgICAgICAgICAgIGFkZHJl","c3NMaW5lcy5mb3JFYWNoKChsaW5lLCBpbmRleCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBj","b25zdCB0b3RhbExpbmVOdW1iZXIgPSBjb250YWN0TGluZXNDb3VudCArIChpbmRleCArIDEpOwogICAj","ICAgICAgICAgICAgICAgICAgICBjb25zdCByaWdodFggPSB0b3RhbExpbmVOdW1iZXIgPT09IDQgPyA5","OTAgKiBzY2FsZSA6IDExMTUgKiBzY2FsZTsKICAgICAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxU","ZXh0KGxpbmUsIHJpZ2h0WCwgeSk7CiAgICAgICAgICAgICAgICAgICAgICAgIHkgKz0gTElORV9IRUlH","SFQ7CiAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0s","CiAgICAgICAgICAgICdrcyc6IHsKICAgICAgICAgICAgICAgIGJnSW1hZ2U6ICdpbWFnZS9rcy5qcGcn","LAogICAgICAgICAgICAgICAgYmdTaXplOiB7IHdpZHRoOiAxMTc5LCBoZWlnaHQ6IDI1NTYgfSwKICAj","ICAgICAgICAgICAgIHJlbmRlclBhcmFtczogeyBmb250U2l6ZTogNDAsIGxpbmVIZWlnaHQ6IDEuNSB9","LAogICAgICAgICAgICAgICAgbmFtZTogJ+W/q+aJiycsCiAgICAgICAgICAgICAgICBkcmF3RnVuY3Rp","b246IGZ1bmN0aW9uKGN0eCwgZGF0YSwgcGFyYW1zKSB7CiAgICAgICAgICAgICAgICAgICAgY29uc3Qg","eyBuYW1lLCBwaG9uZSwgYWRkcmVzcyB9ID0gZGF0YTsKICAgICAgICAgICAgICAgICAgICBjb25zdCB7","IExJTkVfSEVJR0hULCBzY2FsZSB9ID0gcGFyYW1zOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IGNv","bnRhY3RJbmZvID0gYCR7bmFtZX0gJHtwaG9uZX1gOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IGFk","ZHJlc3NMaW5lcyA9IHNwbGl0VGV4dEJ5TGVuZ3RoKGFkZHJlc3MsIDIyKTsKCiAgICAgICAgICAgICAj","ICAgICAgICBjdHgudGV4dEFsaWduID0gJ2xlZnQnOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsU3","eWxlID0gJyMzMzMzMzMnOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChjb250YWN0SW5m","bywgNDAwICogc2NhbGUsIDE1MTcgKiBzY2FsZSk7CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxT","dHlsZSA9ICcjOTc5Nzk3JzsKCiAgICAgICAgICAgICAgICAgICAgbGV0IGN1cnJlbnRZID0gMTU3NSAq","IHNjYWxlOwogICAgICAgICAgICAgICAgICAgIGFkZHJlc3NMaW5lcy5mb3JFYWNoKGxpbmUgPT4gewog","ICAgICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFRleHQobGluZSwgODcgKiBzY2FsZSwgY3VycmVu","dFkpOwogICAgICAgICAgICAgICAgICAgICAgICBjdXJyZW50WSArPSBMSU5FX0hFSUdIVDsKICAgICAj","ICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSwKICAgICAgICAj","ICAgJ2pkJzogewogICAgICAgICAgICAgICAgYmdJbWFnZTogJ2ltYWdlL2pkLmpwZycsCiAgICAgICAj","ICAgICAgICBiZ1NpemU6IHsgd2lkdGg6IDExNzksIGhlaWdodDogMjU1NiB9LAogICAgICAgICAgICAj","ICAgcmVuZGVyUGFyYW1zOiB7IGZvbnRTaXplOiA0MCwgbGluZUhlaWdodDogMS41IH0sCiAgICAgICAj","ICAgICAgICBuYW1lOiAn5Lqs5LicJywKICAgICAgICAgICAgICAgIGRyYXdGdW5jdGlvbjogZnVuY3Rp","b24oY3R4LCBkYXRhLCBwYXJhbXMpIHsKICAgICAgICAgICAgICAgICAgICBjb25zdCB7IG5hbWUsIHBo","b25lLCBhZGRyZXNzIH0gPSBkYXRhOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgTElORV9IRUlH","SFQsIHNjYWxlIH0gPSBwYXJhbXM7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgYWRkcmVzc0xpbmVz","ID0gc3BsaXRUZXh0QnlMZW5ndGgoYWRkcmVzcywgMTkpOwoKICAgICAgICAgICAgICAgICAgICBjdHgu","dGV4dEFsaWduID0gJ2xlZnQnOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsU3R5bGUgPSAnIzAw","MDAwMCc7CiAgICAgICAgICAgICAgICAgICAgbGV0IGN1cnJlbnRZID0gMTU3NiAqIHNjYWxlOwoKICAj","ICAgICAgICAgICAgICAgICBhZGRyZXNzTGluZXMuZm9yRWFjaChsaW5lID0+IHsKICAgICAgICAgICAj","ICAgICAgICAgICAgY3R4LmZpbGxUZXh0KGxpbmUsIDI1MCAqIHNjYWxlLCBjdXJyZW50WSk7CiAgICAj","ICAgICAgICAgICAgICAgICAgIGN1cnJlbnRZICs9IExJTkVfSEVJR0hUOwogICAgICAgICAgICAgICAj","ICAgIH0pOwoKICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFRleHQobmFtZSwgMjUwICogc2NhbGUs","IDE3MjMgKiBzY2FsZSk7CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxUZXh0KHBob25lLCAyNTAg","KiBzY2FsZSwgMTgxMyAqIHNjYWxlKTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSwKICAj","ICAgICAgICAgJ2R3JzogewogICAgICAgICAgICAgICAgYmdJbWFnZTogJ2ltYWdlL2R3LmpwZycsCiAj","ICAgICAgICAgICAgICAgIGJnU2l6ZTogeyB3aWR0aDogMTE3OSwgaGVpZ2h0OiAyNTU2IH0sICAgICAj","ICAgICAgICAgICAgcmVuZGVyUGFyYW1zOiB7IGZvbnRTaXplOiA0MCwgbGluZUhlaWdodDogMS41IH0s","CiAgICAgICAgICAgICAgICBuYW1lOiAn5b6X54mpJywKICAgICAgICAgICAgICAgIGRyYXdGdW5jdGlv","bjogZnVuY3Rpb24oY3R4LCBkYXRhLCBwYXJhbXMpIHsKICAgICAgICAgICAgICAgICAgICBjb25zdCB7","IG5hbWUsIHBob25lLCBhZGRyZXNzIH0gPSBkYXRhOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IHsg","TElORV9IRUlHSFQsIHNjYWxlIH0gPSBwYXJhbXM7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgYWRk","cmVzc0xpbmVzID0gc3BsaXRUZXh0QnlMZW5ndGgoYWRkcmVzcywgMjkpOwogICAgICAgICAgICAgICAj","ICAgICBjdHgudGV4dEFsaWduID0gJ2xlZnQnOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsU3R5","bGUgPSAnIzMzMzMzMyc7CiAgICAgICAgICAgICAgICAgICAgbGV0IHkgPSAxMDIzICogc2NhbGU7CiAj","ICAgICAgICAgICAgICAgICBhZGRyZXNzTGluZXMuZm9yRWFjaChsaW5lID0+IHsKICAgICAgICAgICAj","ICAgICAgICAgICAgY3R4LmZpbGxUZXh0KGxpbmUsIDcwICogc2NhbGUsIHkpOwogICAgICAgICAgICAj","ICAgICAgICAgICAgeSArPSBMSU5FX0hFSUdIVDsKICAgICAgICAgICAgICAgICAgICB9KTsKICAgICAj","ICAgICAgICAgICAgICBjdHguZmlsbFRleHQobmFtZSwgNzAgKiBzY2FsZSwgeSk7CiAgICAgICAgICAgICAj","ICAgICAgICB5ICs9IExJTkVfSEVJR0hUOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChw","aG9uZSwgNzAgKiBzY2FsZSwgeSk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0sCiAgICAj","ICAgICAgICd4aHMnOiB7CiAgICAgICAgICAgICAgICBiZ0ltYWdlOiAnaW1hZ2UveGhzLmpwZycsCiAj","ICAgICAgICAgICAgICAgYmdTaXplOiB7IHdpZHRoOiAxMTc5LCBoZWlnaHQ6IDI1NTYgfSwKICAgICAj","ICAgICAgICAgICByZW5kZXJQYXJhbXM6IHsgZm9udFNpemU6IDQwLCBsaW5lSGVpZ2h0OiAxLjUgfSwK","ICAgICAgICAgICAgICAgIG5hbWU6ICflsI/nuqLkuaYnLAogICAgICAgICAgICAgICAgZHJhd0Z1bmN0","aW9uOiBmdW5jdGlvbihjdHgsIGRhdGEsIHBhcmFtcykgewogICAgICAgICAgICAgICAgICAgIGNvbnN0","IHsgbmFtZSwgcGhvbmUsIGFkZHJlc3MgfSA9IGRhdGE7CiAgICAgICAgICAgICAgICAgICAgY29uc3Qg","eyBMSU5FX0hFSUdIVCwgc2NhbGUgfSA9IHBhcmFtczsKICAgICAgICAgICAgICAgICAgICBjdHgudGV4","dEFsaWduID0gJ3JpZ2h0JzsKICAgICAgICAgICAgICAgICAgICBjdHguZmlsbFN0eWxlID0gJyMwMDAw","MDAnOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IGxpbmVzID0gc3BsaXRYSFMoYCR7bmFtZX0ge3tw","aG9uZV9wbGFjZWhvbGRlcn19ICR7YWRkcmVzc31gLCBwaG9uZSwgMTksIDcpOwogICAgICAgICAgICAj","ICAgICAgICBsZXQgeSA9IDk5MSAqIHNjYWxlOwogICAgICAgICAgICAgICAgICAgIGxpbmVzLmZvckVh","Y2gobGluZSA9PiB7CiAgICAgICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChsaW5lLCAxMDc5","ICogc2NhbGUsIHkpOwogICAgICAgICAgICAgICAgICAgICAgICB5ICs9IExJTkVfSEVJR0hUOwogICAj","ICAgICAgICAgICAgICAgIH0pOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9LAogICAgICAj","ICAgICd3cGgnOiB7CiAgICAgICAgICAgICAgICBiZ0ltYWdlOiAnaW1hZ2Uvd3BoLmpwZycsCiAgICAj","ICAgICAgICAgICAgYmdTaXplOiB7IHdpZHRoOiAxMTc5LCBoZWlnaHQ6IDI1NTYgfSwKICAgICAgICAj","ICAgICAgICByZW5kZXJQYXJhbXM6IHsgZm9udFNpemU6IDQwLCBsaW5lSGVpZ2h0OiAxLjUgfSwKICAj","ICAgICAgICAgICAgICBuYW1lOiAn5ZSv5ZOB5LyaJywKICAgICAgICAgICAgICAgIGRyYXdGdW5jdGlv","bjogZnVuY3Rpb24oY3R4LCBkYXRhLCBwYXJhbXMpIHsKICAgICAgICAgICAgICAgICAgICBjb25zdCB7","IG5hbWUsIHBob25lLCBhZGRyZXNzIH0gPSBkYXRhOwogICAgICAgICAgICAgICAgICAgIGNvbnN0IHsg","TElORV9IRUlHSFQsIHNjYWxlIH0gPSBwYXJhbXM7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgY29u","dGFjdEluZm8gPSBgJHtuYW1lfSAke3Bob25lfWA7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgYWRk","cmVzc0xpbmVzID0gc3BsaXRUZXh0QnlMZW5ndGgoYWRkcmVzcywgMjQpOwogICAgICAgICAgICAgICAj","ICAgICBjdHgudGV4dEFsaWduID0gJ2xlZnQnOwogICAgICAgICAgICAgICAgICAgIGN0eC5maWxsU3R5","bGUgPSAnIzAwMDAwMCc7CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxUZXh0KGNvbnRhY3RJbmZv","LCA5NSAqIHNjYWxlLCA3MDAgKiBzY2FsZSk7CiAgICAgICAgICAgICAgICAgICAgY3R4LmZpbGxTdHls","ZSA9ICcjODA4MDgwJzsKICAgICAgICAgICAgICAgICAgICBsZXQgeSA9IDcwMCAqIHNjYWxlICsgTElO","RV9IRUlHSFQ7CiAgICAgICAgICAgICAgICAgICAgYWRkcmVzc0xpbmVzLmZvckVhY2gobGluZSA9PiB7","CiAgICAgICAgICAgICAgICAgICAgICAgIGN0eC5maWxsVGV4dChsaW5lLCA5NSAqIHNjYWxlLCB5KTsK","ICAgICAgICAgICAgICAgICAgICAgICAgeSArPSBMSU5FX0hFSUdIVDsKICAgICAgICAgICAgICAgICAg","ICB9KTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH07CgogICAgICAgIC8v","IOacrOWcsOaooeadv+WIl+ihqAogICAgICAgIGNvbnN0IExPQ0FMX1RFTVBMQVRFUyA9IFsKICAgICAj","ICAgICAgIHsgaWQ6ICd0YW9iYW8nLCBuYW1lOiAn5re45a6dJyB9LAogICAgICAgICAgICB7IGlkOiAn","cGRkJywgbmFtZTogJ+aLvOWkmuWkmicgfSwKICAgICAgICAgICAgeyBpZDogJ2R5JywgbmFtZTogJ+aK","lpbn+zMnIH0sCiAgICAgICAgICAgIHsgaWQ6ICdrcycsIG5hbWU6ICflv6vmiYsnIH0sCiAgICAgICAj","ICAgICB7IGlkOiAnamQnLCBuYW1lOiAn5Lqs5LicJyB9LAogICAgICAgICAgICB7IGlkOiAnZHcnLCBu","YW1lOiAn5b6X54mpJyB9LAogICAgICAgICAgICB7IGlkOiAneGhzJywgbmFtZTogJ+Wwj+e6ouS5picg","fSwKICAgICAgICAgICAgeyBpZDogJ3dwaCcsIG5hbWU6ICfllK/lk4HkvJonIH0KICAgICAgICBdOwog","CiAgICAgICAgLy8g5Zu+5qCH5piy5bCECiAgICAgICAgY29uc3QgVEVNUExBVEVfSUNPTlMgPSB7CiAj","ICAgICAgICAgICB0YW9iYW86ICdpbWFnZS90YW9iYW8taWNvbi5wbmcnLAogICAgICAgICAgICBwZGQ6","ICdpbWFnZS9wZGQtaWNvbi5wbmcnLAogICAgICAgICAgICBkeTogJ2ltYWdlL2R5LWljb24ucG5nJywK","ICAgICAgICAgICAgaWNvbjogJ2ltYWdlL2tzLWljb24ucG5nJywKICAgICAgICAgICAgamQ6ICdpbWFn","ZS9qZC1pY29uLnBuZycsCiAgICAgICAgICAgIGR3OiAnaW1hZ2UvZHctaWNvbi5wbmcnLAogICAgICAj","ICAgICAgICB4aHM6ICdpbWFnZS94aHMtaWNvbi5wbmcnLAogICAgICAgICAgICB3cGg6ICdpbWFnZS93","cGgtaWNvbi5wbmcnCiAgICAgICAgfTsKCiAgICAgICAgLy8gRE9N5YWD57SgCiAgICAgICAgY29uc3Qg","cmF3VGV4dEVsID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jhd1RleHQnKTsKICAgICAgICBjb25z","dCBuYW1lRWwgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbmFtZScpOwogICAgICAgIGNvbnN0IHBo","b25lRWwgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncGhvbmUnKTsKICAgICAgICBjb25zdCBhZGRy","ZXNzRWwgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYWRkcmVzcycpOwogICAgICAgIGNvbnN0IHBh","c3RlQnRuID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Bhc3RlQnRuJyk7CiAgICAgICAgY29uc3Qg","Y2xlYXJCdG4gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY2xlYXJCdG4nKTsKICAgICAgICBjb25z","dCBnZW5lcmF0ZUJ0biA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdnZW5lcmF0ZUJ0bicpOwogICAj","ICAgIGNvbnN0IHRlbXBsYXRlc0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0ZW1w","bGF0ZXNDb250YWluZXInKTsKICAgICAgICBjb25zdCByZXN1bHRTZWN0aW9uID0gZG9jdW1lbnQuZ2V0","RWxlbWVudEJ5SWQoJ3Jlc3VsdFNlY3Rpb24nKTsKICAgICAgICBjb25zdCBjYW52YXNFbCA9IGRvY3Vt","ZW50LmdldEVsZW1lbnRCeUlkKCdpbWFnZUNhbnZhcycpOwogICAgICAgIGNvbnN0IGxvYWRpbmdNb2Rh","bCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsb2FkaW5nTW9kYWwnKTsKICAgICAgICBjb25zdCBy","ZXN1bHRNb2RhbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyZXN1bHRNb2RhbCcpOwogICAgICAj","ICBjb25zdCBtb2RhbENhbmNlbEJ0biA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtb2RhbENhbmNl","bEJ0bicpOwoKICAgICAgICAvLyDlhajlsYDlj5jph48KICAgICAgICBsZXQgc2VsZWN0ZWRUZW1wbGF0","ZUlkID0gJ3Rhb2Jhbyc7CiAgICAgICAgbGV0IHBhcnNlVGltZXIgPSBudWxsOwogICAgICAgIGxldCBj","YW52YXNDb250ZXh0ID0gbnVsbDsKICAgICAgICAvLyDlt7Lnp7vpmaTlr7zlh7rlgI3njofvvIzkt6Xl","hbflhqDmmL7liqDkuIDoh7TnlKjlm7rlrprlt7PlpJbluqYgNDAwcHgg5LiNIERQUiDnvKnmlL4K","ICAgICAgICAvLyDnvJPlpJbog4zmmb/lm77niYcKICAgICAgICBjb25zdCBpbWFnZUNhY2hlID0gbmV3","IE1hcCgpOwoKICAgICAgICAvLyDliJ3lp4vljJYKICAgICAgICBmdW5jdGlvbiBpbml0KCkgewogICAj","ICAgICAgICBjYW52YXNDb250ZXh0ID0gY2FudmFzRWwuZ2V0Q29udGV4dCgnMmQnKTsKICAgICAgICAj","ICAgcmVuZGVyVGVtcGxhdGVzKCk7CiAgICAgICAgICAgIHVwZGF0ZUNhbnZhc0hlaWdodCgpOwogICAj","ICAgICAgICBiaW5kRXZlbnRzKCk7CiAgICAgICAgICAgIC8vIOmihOWKoOi9veeUrOWumuS4gOW8oOaK","oeadv+Wbvu+JhO+8iOWwj++uqiuvluo/kuIDoh7TvvJrkvb/nlKjmqKHmnb/lhoXnva7og4zmma/v","vIkKICAgICAgICAgICAgcHJlbG9hZEltYWdlKFRFTVBMQVRFX0NPTkZJR1Nbc2VsZWN0ZWRUZW1wbGF0","ZUlkXS5iZ0ltYWdlKTsKICAgICAgICB9CgogICAgICAgIC8vIOW3suenu+mZpOiHquWumuS5ieiDjOaZ","r+mAu+i+ke+8jOS/neaMgeS4juWwj+eoi+W6j+S4gOiHtAoKICAgICAgICAvLyDmuLLmn5PmqKHmnb/l","iJfooagKICAgICAgICBmdW5jdGlvbiByZW5kZXJUZW1wbGF0ZXMoKSB7CiAgICAgICAgICAgIHRlbXBs","YXRlc0NvbnRhaW5lci5pbm5lckhUTUwgPSAnJzsKICAgICAgICAgICAgTE9DQUxfVEVNUExBVEVTLmZv","ckVhY2godGVtcGxhdGUgPT4gewogICAgICAgICAgICAgICAgY29uc3QgdGVtcGxhdGVFbCA9IGRvY3Vt","ZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgICAgICAgICAgICAgdGVtcGxhdGVFbC5jbGFzc05h","bWUgPSBgdGVtcGxhdGUtaXRlbSAke3RlbXBsYXRlLmlkID09PSBzZWxlY3RlZFRlbXBsYXRlSWQgPyAn","c2VsZWN0ZWQnIDogJyd9YDsKICAgICAgICAgICAgICAgIHRlbXBsYXRlRWwuZGF0YXNldC5pZCA9IHRl","bXBsYXRlLmlkOwogICAgICAgICAgICAgICAgY29uc3QgaWNvblNyYyA9IFRFTVBMQVRFX0lDT05TW3Rl","bXBsYXRlLmlkXTsKICAgICAgICAgICAgICAgIGNvbnN0IGljb25JbWcgPSBkb2N1bWVudC5jcmVhdGVF","bGVtZW50KCdpbWcnKTsKICAgICAgICAgICAgICAgIGljb25JbWcuY2xhc3NOYW1lID0gJ3RlbXBsYXRl","LWljb24nOwogICAgICAgICAgICAgICAgaWNvbkltZy5hbHQgPSB0ZW1wbGF0ZS5uYW1lOwogICAgICAj","ICAgICAgICBpY29uSW1nLnNyYyA9IGljb25TcmM7CiAgICAgICAgICAgICAgICBjb25zdCBsYWJlbFNw","YW4gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzcGFuJyk7CiAgICAgICAgICAgICAgICBsYWJlbFNw","YW4udGV4dENvbnRlbnQgPSB0ZW1wbGF0ZS5uYW1lOwogICAgICAgICAgICAgICAgdGVtcGxhdGVFbC5h","cHBlbmRDaGlsZChpY29uSW1nKTsKICAgICAgICAgICAgICAgIHRlbXBsYXRlRWwuYXBwZW5kQ2hpbGQo","bGFiZWxTcGFuKTsKICAgICAgICAgICAgICAgIHRlbXBsYXRlc0NvbnRhaW5lci5hcHBlbmRDaGlsZCh0","ZW1wbGF0ZUVsKTsKICAgICAgICAgICAgfSk7CiAgICAgICAgfQoKICAgICAgICAvLyDmm7TmlrDnlLvl","uIMKICAgICAgICBmdW5jdGlvbiB1cGRhdGVDYW52YXNIZWlnaHQoKSB7CiAgICAgICAgICAgIGNvbnN0","IGNvbmZpZyA9IFRFTVBMQVRFX0NPTkZJR1Nbc2VsZWN0ZWRUZW1wbGF0ZUlkXTsKICAgICAgICAgICAg","aWYgKGNvbmZpZykgewogICAgICAgICAgICAgICAgY29uc3QgY3NzV2lkdGggPSA0MDA7IC8vIOWwj++u","qi+W6j+S4gOiHtO+8jOWbuu+lrprlsZXnpLrlrr3luqYKICAgICAgICAgICAgICAgIGNvbnN0IGNzc0hl","aWdodCA9IE1hdGgucm91bmQoY3NzV2lkdGggKiAoY29uZmlnLmJnU2l6ZS5oZWlnaHQgLyBjb25maWcu","YmdTaXplLndpZHRoKSk7CiAgICAgICAgICAgICAgICAvLyDku4Xlm7TmlrAgQ1NTIOWwuuWvuO+8jOec","n+WunuWDj+e0oOWwuuWvuOWcqCByZW5kZXJDYW52YXMg5Lit5oyJIERQUiDorr7nva4KICAgICAgICAj","ICAgICAgICBjYW52YXNFbC5zdHlsZS53aWR0aCA9IGNzc1dpZHRoICsgJ3B4JzsKICAgICAgICAgICAj","ICAgICBjYW52YXNFbC5zdHlsZS5oZWlnaHQgPSBjc3NIZWlnaHQgKyAncHgnOwogICAgICAgICAgICB9","CiAgICAgICAgfQoKICAgICAgICAvLyDnu5Hlrprku4vku7YKICAgICAgICBmdW5jdGlvbiBiaW5kRXZlbn","RzKCkgewogICAgICAgICAgICAvLyDmqKHmnb/pgInmi6kKICAgICAgICAgICAgdGVtcGxhdGVzQ29udGFp","bmVyLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCB0","ZW1wbGF0ZUl0ZW0gPSBlLnRhcmdldC5jbG9zZXN0KCcudGVtcGxhdGUtaXRlbScpOwogICAgICAgICAj","ICAgICAgICBpZiAodGVtcGxhdGVJdGVtICYmIHRlbXBsYXRlSXRlbS5kYXRhc2V0LmlkICE9PSBzZWxl","Y3RlZFRlbXBsYXRlSWQpIHsKICAgICAgICAgICAgICAgICAgICBzZWxlY3RlZFRlbXBsYXRlSWQgPSB0","ZW1wbGF0ZUl0ZW0uZGF0YXNldC5pZDsKICAgICAgICAgICAgICAgICAgICByZW5kZXJUZW1wbGF0ZXMo","KTsKICAgICAgICAgICAgICAgICAgICB1cGRhdGVDYW52YXNIZWlnaHQoKTsKICAgICAgICAgICAgICAj","ICAgICAgICAvLyDpooTliqDovb3pgInmi6nmqKHmnb/nmoTlm77niYfvvIjmqKHmnb/lhoXnva7og4zm","mb/vvIkKICAgICAgICAgICAgICAgICAgICBwcmVsb2FkSW1hZ2UoVEVNUExBVEVfQ09ORklHU1tzZWxl","Y3RlZFRlbXBsYXRlSWRdLmJnSW1hZ2UpOwogICAgICAgICAgICAgICAgICAgIC8vIOmHjeaWsOa4subm","n5PnlLvluIMKICAgICAgICAgICAgICAgICAgICBpZiAobmFtZUVsLnZhbHVlICYmIHBob25lRWwudmFs","dWUgJiYgYWRkcmVzc0VsLnZhbHVlKSB7CiAgICAgICAgICAgICAgICAgICAgICAgIHJlbmRlckNhbnZh","cygpOwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSk7","CgogICAgICAgICAgICAvLyDnspjotLTmjInpkq4KICAgICAgICAgICAgcGFzdGVCdG4uYWRkRXZlbnRM","aXN0ZW5lcignY2xpY2snLCBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgICAgICB0cnkgewogICAgICAj","ICAgICAgICAgICAgICBjb25zdCB0ZXh0ID0gYXdhaXQgbmF2aWdhdG9yLmNsaXBib2FyZC5yZWFkVGV4","dCgpOwogICAgICAgICAgICAgICAgICAgIGlmICghdGV4dC50cmltKCkpIHsKICAgICAgICAgICAgICAj","ICAgICAgICAgICBhbGVydCgn5Yqo6LO05pan5Li65amqJyk7CiAgICAgICAgICAgICAgICAgICAgICAj","ICByZXR1cm47CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIHJhd1RleHRF","bC52YWx1ZSA9IHRleHQ7CiAgICAgICAgICAgICAgICAgICAgZG9QYXJzZSh0ZXh0LCB0cnVlKTsKICAj","ICAgICAgICAgICAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgICAgICAgICAgICAgIGFsZXJ0KCfojrfl","j5bliarotLTmnb/lpLHotKXvvIzor7fmiYvliqjnspjotLQnKTsKICAgICAgICAgICAgICAgIH0KICAj","ICAgICAgICAgICAgfSk7CgogICAgICAgICAgICAvLyDmuIXnqbrmjInpkq4KICAgICAgICAgICAgY2xl","YXJCdG4uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiB7CiAgICAgICAgICAgICAgICByYXdU","ZXh0RWwudmFsdWUgPSAnJzsKICAgICAgICAgICAgICAgIG5hbWVFbC52YWx1ZSA9ICcnOwogICAgICAj","ICAgICAgICBwaG9uZUVsLnZhbHVlID0gJyc7CiAgICAgICAgICAgICAgICBhZGRyZXNzRWwudmFsdWUg","PSAnJzsKICAgICAgICAgICAgICAgIHJlc3VsdFNlY3Rpb24uY2xhc3NMaXN0LmFkZCgnaGlkZGVuJyk7","CiAgICAgICAgICAgICAgICBjYW52YXNDb250ZXh0LmNsZWFyUmVjdCgwLCAwLCBjYW52YXNFbC53aWR0","aCwgY2FudmFzRWwuaGVpZ2h0KTsKICAgICAgICAgICAgfSk7CgogICAgICAgICAgICAvLyDovpPlhbXl","rp7ml7boo6PmgpAKICAgICAgICAgICAgcmF3VGV4dEVsLmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JywgZQ","ID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IHRleHQgPSBlLnRhcmdldC52YWx1ZTsKICAgICAgICAj","ICAgICAgICAgaWYgKCF0ZXh0LnRyaW0oKSkgewogICAgICAgICAgICAgICAgICAgIHJlc3VsdFNlY3Rp","b24uY2xhc3NMaXN0LmFkZCgnaGlkZGVuJyk7CiAgICAgICAgICAgICAgICAgICAgcmV0dXJuOwo
+    <script>
+        // 模板配置（使用本地图片路径）
+        const TEMPLATE_CONFIGS = {
+            'taobao': {
+                bgImage: 'image/tb.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 42, lineHeight: 1.2, fontWeight: 'normal' },
+                name: '淘宝',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { FONT_SIZE, LINE_HEIGHT, scale } = params;
+                    const contactInfo = `${name}，${phone}`;
+                    const addressLines = splitTextByLength(address, 19);
+                    const totalLines = addressLines.length + 1;
+                    let rightX = 1055 * scale;
+                    let contactRightX = 1055 * scale;
+
+                    if (totalLines > 3) contactRightX = rightX - FONT_SIZE * 5;
+
+                    ctx.fillStyle = '#000000';
+                    ctx.textAlign = 'right';
+                    let currentY = 1055 * scale;
+
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, rightX, currentY);
+                        currentY += LINE_HEIGHT;
+                    });
+                    ctx.fillText(contactInfo, contactRightX, currentY);
+                }
+            },
+            'pdd': {
+                bgImage: 'image/pdd.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 47, lineHeight: 1.5, fontWeight: 'normal' },
+                name: '拼多多',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    let currentY = 1817 * scale;
+
+                    ctx.fillStyle = '#000000';
+                    ctx.textAlign = 'left';
+                    const CONTACT_LEFT_X = 374 * scale;
+                    const ADDRESS_LEFT_X = 135 * scale;
+
+                    if (name.length > 4) {
+                        ctx.fillText(name, CONTACT_LEFT_X, currentY);
+                        currentY += LINE_HEIGHT;
+                        ctx.fillText(phone, ADDRESS_LEFT_X, currentY);
+                    } else {
+                        const contactInfo = `${name}  ${phone}`;
+                        ctx.fillText(contactInfo, CONTACT_LEFT_X, currentY);
+                    }
+
+                    currentY += LINE_HEIGHT + 20 * scale;
+                    ctx.fillStyle = '#494949';
+                    ctx.textAlign = 'left';
+                    const addressLines = splitTextByLength(address, 19);
+
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, ADDRESS_LEFT_X, currentY);
+                        currentY += LINE_HEIGHT;
+                    });
+                }
+            },
+            'dy': {
+                bgImage: 'image/dy.jpg',
+                bgSize: { width: 1179, height: 2559 },
+                renderParams: { fontSize: 40, lineHeight: 1.6 },
+                name: '抖音',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    ctx.fillStyle = '#000000';
+                    ctx.textAlign = 'right';
+                    let y, contactLinesCount;
+                    const contactInfo = `${name}，${phone}`;
+
+                    if (name.length <= 12) {
+                        ctx.fillText(contactInfo, 1115 * scale, 750 * scale);
+                        y = 815 * scale;
+                        contactLinesCount = 1;
+                    } else {
+                        ctx.fillText(name, 1115 * scale, 750 * scale);
+                        ctx.fillText(phone, 1115 * scale, 815 * scale);
+                        y = 815 * scale + LINE_HEIGHT;
+                        contactLinesCount = 2;
+                    }
+
+                    const addressLines = splitTextByLength(address, 16);
+                    addressLines.forEach((line, index) => {
+                        const totalLineNumber = contactLinesCount + (index + 1);
+                        const rightX = totalLineNumber === 4 ? 990 * scale : 1115 * scale;
+                        ctx.fillText(line, rightX, y);
+                        y += LINE_HEIGHT;
+                    });
+                }
+            },
+            'ks': {
+                bgImage: 'image/ks.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 40, lineHeight: 1.5 },
+                name: '快手',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    const contactInfo = `${name} ${phone}`;
+                    const addressLines = splitTextByLength(address, 22);
+
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#333333';
+                    ctx.fillText(contactInfo, 400 * scale, 1517 * scale);
+                    ctx.fillStyle = '#979797';
+
+                    let currentY = 1575 * scale;
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, 87 * scale, currentY);
+                        currentY += LINE_HEIGHT;
+                    });
+                }
+            },
+            'jd': {
+                bgImage: 'image/jd.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 40, lineHeight: 1.5 },
+                name: '京东',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    const addressLines = splitTextByLength(address, 19);
+
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#000000';
+                    let currentY = 1576 * scale;
+
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, 250 * scale, currentY);
+                        currentY += LINE_HEIGHT;
+                    });
+
+                    ctx.fillText(name, 250 * scale, 1723 * scale);
+                    ctx.fillText(phone, 250 * scale, 1813 * scale);
+                }
+            },
+            'dw': {
+                bgImage: 'image/dw.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 40, lineHeight: 1.5 },
+                name: '得物',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    const addressLines = splitTextByLength(address, 29);
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#333333';
+                    let y = 1023 * scale;
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, 70 * scale, y);
+                        y += LINE_HEIGHT;
+                    });
+                    ctx.fillText(name, 70 * scale, y);
+                    y += LINE_HEIGHT;
+                    ctx.fillText(phone, 70 * scale, y);
+                }
+            },
+            'xhs': {
+                bgImage: 'image/xhs.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 40, lineHeight: 1.5 },
+                name: '小红书',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    ctx.textAlign = 'right';
+                    ctx.fillStyle = '#000000';
+                    const lines = splitXHS(`${name} {{phone_placeholder}} ${address}`, phone, 19, 7);
+                    let y = 991 * scale;
+                    lines.forEach(line => {
+                        ctx.fillText(line, 1079 * scale, y);
+                        y += LINE_HEIGHT;
+                    });
+                }
+            },
+            'wph': {
+                bgImage: 'image/wph.jpg',
+                bgSize: { width: 1179, height: 2556 },
+                renderParams: { fontSize: 40, lineHeight: 1.5 },
+                name: '唯品会',
+                drawFunction: function(ctx, data, params) {
+                    const { name, phone, address } = data;
+                    const { LINE_HEIGHT, scale } = params;
+                    const contactInfo = `${name} ${phone}`;
+                    const addressLines = splitTextByLength(address, 24);
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#000000';
+                    ctx.fillText(contactInfo, 95 * scale, 700 * scale);
+                    ctx.fillStyle = '#808080';
+                    let y = 700 * scale + LINE_HEIGHT;
+                    addressLines.forEach(line => {
+                        ctx.fillText(line, 95 * scale, y);
+                        y += LINE_HEIGHT;
+                    });
+                }
+            }
+        };
+
+        // 本地模板列表
+        const LOCAL_TEMPLATES = [
+            { id: 'taobao', name: '淘宝' },
+            { id: 'pdd', name: '拼多多' },
+            { id: 'dy', name: '抖音' },
+            { id: 'ks', name: '快手' },
+            { id: 'jd', name: '京东' },
+            { id: 'dw', name: '得物' },
+            { id: 'xhs', name: '小红书' },
+            { id: 'wph', name: '唯品会' }
+        ];
+
+        // 图标映射
+        const TEMPLATE_ICONS = {
+            taobao: 'image/taobao-icon.png',
+            pdd: 'image/pdd-icon.png',
+            dy: 'image/dy-icon.png',
+            ks: 'image/ks-icon.png',
+            jd: 'image/jd-icon.png',
+            dw: 'image/dw-icon.png',
+            xhs: 'image/xhs-icon.png',
+            wph: 'image/wph-icon.png'
+        };
+
+        // DOM元素
+        const rawTextEl = document.getElementById('rawText');
+        const nameEl = document.getElementById('name');
+        const phoneEl = document.getElementById('phone');
+        const addressEl = document.getElementById('address');
+        const pasteBtn = document.getElementById('pasteBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const generateBtn = document.getElementById('generateBtn');
+        const templatesContainer = document.getElementById('templatesContainer');
+        const resultSection = document.getElementById('resultSection');
+        const canvasEl = document.getElementById('imageCanvas');
+        const loadingModal = document.getElementById('loadingModal');
+        const resultModal = document.getElementById('resultModal');
+        const modalCancelBtn = document.getElementById('modalCancelBtn');
+
+        // 全局变量
+        let selectedTemplateId = 'taobao';
+        let parseTimer = null;
+        let canvasContext = null;
+        // 已移除导出倍率，严格一致模式使用固定展示宽度 400px 与 DPR 缩放
+        // 缓存背景图片
+        const imageCache = new Map();
+
+        // 初始化
+        function init() {
+            canvasContext = canvasEl.getContext('2d');
+            renderTemplates();
+            updateCanvasHeight();
+            bindEvents();
+            // 预加载第一张模板图片（小程序一致：使用模板内置背景）
+            preloadImage(TEMPLATE_CONFIGS[selectedTemplateId].bgImage);
+        }
+
+        // 已移除自定义背景逻辑，保持与小程序一致
+
+        // 渲染模板列表
+        function renderTemplates() {
+            templatesContainer.innerHTML = '';
+            LOCAL_TEMPLATES.forEach(template => {
+                const templateEl = document.createElement('div');
+                templateEl.className = `template-item ${template.id === selectedTemplateId ? 'selected' : ''}`;
+                templateEl.dataset.id = template.id;
+                const iconSrc = TEMPLATE_ICONS[template.id];
+                const iconImg = document.createElement('img');
+                iconImg.className = 'template-icon';
+                iconImg.alt = template.name;
+                iconImg.src = iconSrc;
+                const labelSpan = document.createElement('span');
+                labelSpan.textContent = template.name;
+                templateEl.appendChild(iconImg);
+                templateEl.appendChild(labelSpan);
+                templatesContainer.appendChild(templateEl);
+            });
+        }
+
+        // 更新画布高度
+        function updateCanvasHeight() {
+            const config = TEMPLATE_CONFIGS[selectedTemplateId];
+            if (config) {
+                const cssWidth = 400; // 小程序一致：固定展示宽度
+                const cssHeight = Math.round(cssWidth * (config.bgSize.height / config.bgSize.width));
+                // 仅更新 CSS 尺寸，真实像素尺寸在 renderCanvas 中按 DPR 设置
+                canvasEl.style.width = cssWidth + 'px';
+                canvasEl.style.height = cssHeight + 'px';
+            }
+        }
+
+        // 绑定事件
+        function bindEvents() {
+            // 模板选择
+            templatesContainer.addEventListener('click', e => {
+                const templateItem = e.target.closest('.template-item');
+                if (templateItem && templateItem.dataset.id !== selectedTemplateId) {
+                    selectedTemplateId = templateItem.dataset.id;
+                    renderTemplates();
+                    updateCanvasHeight();
+                    // 预加载选中模板的图片（模板内置背景）
+                    preloadImage(TEMPLATE_CONFIGS[selectedTemplateId].bgImage);
+                    // 重新渲染画布
+                    if (nameEl.value && phoneEl.value && addressEl.value) {
+                        renderCanvas();
+                    }
+                }
+            });
+
+            // 粘贴按钮
+            pasteBtn.addEventListener('click', async () => {
+                try {
+                    const text = await navigator.clipboard.readText();
+                    if (!text.trim()) {
+                        alert('剪贴板为空');
+                        return;
+                    }
+                    rawTextEl.value = text;
+                    doParse(text, true);
+                } catch (err) {
+                    alert('获取剪贴板失败，请手动粘贴');
+                }
+            });
+
+            // 清空按钮
+            clearBtn.addEventListener('click', () => {
+                rawTextEl.value = '';
+                nameEl.value = '';
+                phoneEl.value = '';
+                addressEl.value = '';
+                resultSection.classList.add('hidden');
+                canvasContext.clearRect(0, 0, canvasEl.width, canvasEl.height);
+            });
+
+            // 输入实时解析
+            rawTextEl.addEventListener('input', e => {
+                const text = e.target.value;
+                if (!text.trim()) {
+                    resultSection.classList.add('hidden');
+                    return;
+                }
+                if (parseTimer) clearTimeout(parseTimer);
+                parseTimer = setTimeout(() => {
+                    doParse(text, false);
+                }, 300);
+            });
+
+            // 表单字段修改 - 使用防抖优化
+            const debouncedRender = debounce(renderCanvas, 200);
+            nameEl.addEventListener('input', debouncedRender);
+            phoneEl.addEventListener('input', debouncedRender);
+            addressEl.addEventListener('input', debouncedRender);
+
+            // 生成按钮
+            generateBtn.addEventListener('click', generateAndSave);
+
+            // 已移除：导出倍率选择事件
+
+            // 已移除：选择高分辨率背景相关事件（保持与小程序一致，无此功能）
+
+            // 模态框按钮
+            modalCancelBtn.addEventListener('click', () => {
+                resultModal.classList.add('hidden');
+            });
+
+            // 窗口大小变化时更新画布 - 防抖优化
+            window.addEventListener('resize', debounce(() => {
+                updateCanvasHeight();
+                if (nameEl.value && phoneEl.value && addressEl.value) {
+                    renderCanvas();
+                }
+            }, 300));
+        }
+
+        // 解析地址信息
+        function intelligentParse(rawText) {
+            let tempText = rawText;
+            // 替换特殊字符
+            tempText = tempText.replace(/[【】()\[\]]/g, ' ');
+            // 替换关键词
+            tempText = tempText.replace(/收件人|收货人|姓名|地址|电话|手机|手机号|电话号|座机|座机号|号码|联系方式|信息/g, ' ');
+
+            let phone = '';
+            let extensionMatch = null;
+            let textWithoutPhone = tempText;
+            // 手机号正则
+            const phoneRegex = /((?:(?:\+86[\s-]?)?1[3-9]\d{9})|(?:\d{3,4}-)?\d{7,8})(-\d{1,8})?/;
+            const phoneMatch = tempText.match(phoneRegex);
+
+            if (phoneMatch) {
+                const fullMatch = phoneMatch[0];
+                const corePhone = phoneMatch[1];
+                extensionMatch = phoneMatch[2];
+                phone = corePhone.replace(/\+86/g, '').trim();
+                textWithoutPhone = tempText.replace(fullMatch, ' ');
+            }
+
+            const nameParts = [];
+            const addressParts = [];
+            // 地址关键词
+            const addressKeywords = ['省', '市', '区', '县', '街道', '镇', '乡', '村', '路', '道', '街', '巷', '胡同', '小区', '大厦', '广场', '号楼', '单元', '室', '园', '房', '院', '里'];
+
+            // 分割文本
+            const chunks = textWithoutPhone.split(/[\s\n,，.。;；:：@！~·\+\-_\—\/\*]+/).filter(p => p);
+            chunks.forEach(chunk => {
+                if (addressKeywords.some(keyword => chunk.includes(keyword)) || chunk.length > 8) {
+                    addressParts.push(chunk);
+                } else {
+                    nameParts.push(chunk);
+                }
+            });
+
+            let name = nameParts.join(' ');
+            let address = addressParts.join('').replace(/\s+/g, '');
+
+            // 处理分机号
+            if (extensionMatch) {
+                const extensionNumber = extensionMatch.replace('-', '');
+                address = `${address}转【${extensionNumber}】`;
+            }
+
+            return { name, phone, address };
+        }
+
+        // 执行解析
+        function doParse(text, shouldScroll) {
+            if (!text.trim()) {
+                resultSection.classList.add('hidden');
+                return;
+            }
+
+            const { name, phone, address } = intelligentParse(text);
+            nameEl.value = name;
+            phoneEl.value = phone;
+            addressEl.value = address;
+            resultSection.classList.remove('hidden');
+
+            // 渲染画布
+            renderCanvas();
+
+            // 滚动到结果区
+            if (shouldScroll) {
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 预加载图片
+        function preloadImage(src) {
+            if (!imageCache.has(src)) {
+                const img = new Image();
+                img.src = src;
+                imageCache.set(src, img);
+            }
+        }
+
+        // 渲染画布
+        function renderCanvas() {
+            const name = nameEl.value.trim();
+            const phone = phoneEl.value.trim();
+            const address = addressEl.value.trim();
+            if (!name || !phone || !address) return;
+
+            const config = TEMPLATE_CONFIGS[selectedTemplateId];
+            if (!config) return;
+            const ctx = canvasContext;
+            const dpr = window.devicePixelRatio || 1;
+            const displayW = canvasEl.parentElement.clientWidth || 400;  // 与小程序保持一致的展示宽度
+            const displayH = Math.round(config.bgSize.height * (displayW / config.bgSize.width));
+
+            // 设置画布像素尺寸（考虑设备像素比）和 CSS 尺寸
+            canvasEl.width = Math.round(displayW * dpr);
+            canvasEl.height = Math.round(displayH * dpr);
+            canvasEl.style.width = displayW + 'px';
+            canvasEl.style.height = displayH + 'px';
+
+            // 清空并按 dpr 缩放到 CSS 像素坐标系
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+            ctx.scale(dpr, dpr);
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+
+            // 坐标缩放比例，与小程序一致：展示宽度 / 模板基准宽度
+            const scale = displayW / config.bgSize.width;
+            const FONT_SIZE = Math.round((config.renderParams.fontSize || 40) * scale);
+            const LINE_HEIGHT = FONT_SIZE * (config.renderParams.lineHeight || 1.5);
+
+            // 加载背景图（本地路径），绘制到展示尺寸
+            let bgImage = imageCache.get(config.bgImage);
+            if (!bgImage) {
+                bgImage = new Image();
+                bgImage.src = config.bgImage;
+                imageCache.set(config.bgImage, bgImage);
+            }
+
+            const drawMain = () => {
+                // 背景图缩放到展示尺寸
+                ctx.drawImage(bgImage, 0, 0, displayW, displayH);
+                // 字体设置与基线
+                ctx.font = `${config.renderParams.fontWeight || 'bold'} ${FONT_SIZE}px sans-serif`;
+                ctx.textBaseline = 'top';
+                // 模板绘制
+                config.drawFunction(ctx, { name, phone, address }, { FONT_SIZE, LINE_HEIGHT, scale });
+
+                // 水印：文字
+                const generationTime = formatDateTime(new Date());
+                const watermarkText = `图片由闲鱼 你耳机听什么 生成， @ ${generationTime}`;
+                const w = Math.round(64 * scale);
+                const T = Math.round(22 * scale);
+                            ctx.font = `normal ${T}px sans-serif`;
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'bottom';
+                ctx.fillText(watermarkText, w, displayH - w);
+
+                // 水印：图片（若存在，则绘制右下角半透明图标）
+                const wmImg = new Image();
+                wmImg.onload = function() {
+                    const t = Math.round(180 * scale);
+                    const a = displayW - t - w;
+                    const n = displayH - w - T - Math.round(10 * scale) - t;
+                    ctx.globalAlpha = 0.6;
+                    ctx.drawImage(wmImg, a, n, t, t);
+                    ctx.globalAlpha = 1;
+                };
+                wmImg.onerror = function() {
+                    console.warn('图片水印加载失败，仅绘制文字水印');
+                };
+                wmImg.src = 'image/shuiyin.jpg';
+            };
+
+            if (bgImage.complete) {
+                drawMain();
+            } else {
+                bgImage.onload = drawMain;
+                bgImage.onerror = function() {
+                    alert('背景图加载失败，请检查 image 文件夹是否存在对应图片');
+                };
+            }
+        }
+
+        // 生成并保存图片
+        function generateAndSave() {
+            const name = nameEl.value.trim();
+            const phone = phoneEl.value.trim();
+            const address = addressEl.value.trim();
+
+            if (!name || !phone || !address) {
+                alert('请填写完整信息');
+                return;
+            }
+
+            loadingModal.classList.remove('hidden');
+
+            // 使用requestAnimationFrame优化渲染时机
+            requestAnimationFrame(() => {
+                try {
+                    // 获取画布数据URL
+                    const imageData = canvasEl.toDataURL('image/jpeg', 1.0);
+
+                    // 保存到本地（浏览器下载）
+                    const link = document.createElement('a');
+                    link.download = `退货截图_${selectedTemplateId}_${formatDateTime(new Date(), 'yyyyMMddHHmmss')}.jpg`;
+                    link.href = imageData;
+                    link.click();
+
+                    // 显示结果弹窗
+                    loadingModal.classList.add('hidden');
+                    resultModal.classList.remove('hidden');
+                } catch (err) {
+                    loadingModal.classList.add('hidden');
+                    alert('生成图片失败，请重试');
+                    console.error('Generate error:', err);
+                }
+            });
+        }
+
+        // 工具函数：分割文本
+        function splitTextByLength(text, maxLength) {
+            const lines = [];
+            if (!text || typeof text !== 'string') return lines;
+
+            let currentText = text;
+            while (currentText.length > 0) {
+                lines.push(currentText.substring(0, maxLength));
+                currentText = currentText.substring(maxLength);
+            }
+            return lines;
+        }
+
+        // 特殊分行：小红书，将英文数字与空格按半字宽计数，且将手机号占位符视作固定宽度
+        function splitXHS(textWithPlaceholder, phone, maxUnits, phoneUnits) {
+            const placeholder = '{{phone_placeholder}}';
+            const lines = [];
+            if (!textWithPlaceholder || typeof textWithPlaceholder !== 'string') return lines;
+            const replacePhone = (s) => s.replace(placeholder, phone);
+            let acc = '';
+            let used = 0;
+            for (let i = 0; i < textWithPlaceholder.length; i++) {
+                if (textWithPlaceholder.substring(i, i + placeholder.length) === placeholder) {
+                    const u = phoneUnits;
+                    if (used + u > maxUnits && acc) {
+                        lines.push(replacePhone(acc));
+                        acc = placeholder;
+                        used = u;
+                    } else {
+                        acc += placeholder;
+                        used += u;
+                    }
+                    i += placeholder.length - 1;
+                } else {
+                    const ch = textWithPlaceholder[i];
+                    const u = /[a-zA-Z0-9\s]/.test(ch) ? 0.5 : 1;
+                    if (used + u > maxUnits) {
+                        lines.push(replacePhone(acc));
+                        acc = ch;
+                        used = u;
+                    } else {
+                        acc += ch;
+                        used += u;
+                    }
+                }
+            }
+            if (acc) lines.push(replacePhone(acc));
+            return lines;
+        }
+
+        // 工具函数：格式化日期时间
+        function formatDateTime(date, format = 'yyyy-MM-dd HH:mm:ss') {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const seconds = date.getSeconds().toString().padStart(2, '0');
+
+            return format.replace('yyyy', year)
+                .replace('MM', month)
+                .replace('dd', day)
+                .replace('HH', hours)
+                .replace('mm', minutes)
+                .replace('ss', seconds);
+        }
+
+        // 防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // 初始化页面
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
